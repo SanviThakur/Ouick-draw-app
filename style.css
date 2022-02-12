@@ -1,0 +1,18 @@
+body{
+    background-color: hotpink;
+}
+
+#score{
+   font-size: 18px;
+   margin-left: 35px; 
+}
+
+#time{
+    font-size: 18px;
+    float: right;
+    margin-right: 35px;
+}
+
+#sketch{
+    color: purple;
+}
