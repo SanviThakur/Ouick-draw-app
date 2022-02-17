@@ -9,3 +9,19 @@ random_no = Math.floor((Math.random()*array_1.length)+1);
 console.log(quick_draw_data_set[random_number]);
 sketch = quick_draw_data_set[random_number];
 document.getElementById("sketch").innerHTML = 'Sketch To Be Drawn : ' + sketch;
+
+function draw(){
+    check_sketch()
+}
+
+function updateCanvas(){
+    canvas = background(white);
+    random_number = Math.random(quick_draw_data_set);
+    console.log(random_number);
+    document.getElementById(sketch).innerHTML;
+
+}
+
+
+
+
