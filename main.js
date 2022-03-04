@@ -10,18 +10,33 @@ console.log(quick_draw_data_set[random_number]);
 sketch = quick_draw_data_set[random_number];
 document.getElementById("sketch").innerHTML = 'Sketch To Be Drawn : ' + sketch;
 
-function draw(){
-    check_sketch()
+function preload() {
+    classifier = ml5.imageClassifier('DoodleNet');
+    }
+    function setup() {
+    canvas.mouseReleased(classifyCanvas);
+    }
+    function draw() {
+    
+    strokeWeight(13);
+   
+    stroke(0);
+    
+    positions
+    if (mouseIsPressed) {
+    line(pmouseX, pmouseY, mouseX, mouseY);
+    }
+    }
+    function classifyCanvas() {
+    classifier.classify(canvas, gotResult);
+    }
+    function gotResult(error, results) {
+    if (error) {
+    console.error(error);
+    }
+    console.log(results);
+    drawn_sketch = results[0].label;
+    document.getElementById('label').innerHTML = 'Your Sketch: ' + drawn_sketch;
+    document.getElementById('confidence').innerHTML = 'Confidence: ' +
+    Math.round(results[0].confidence * 100) + '%';
 }
-
-function updateCanvas(){
-    canvas = background(white);
-    random_number = Math.random(quick_draw_data_set);
-    console.log(random_number);
-    document.getElementById(sketch).innerHTML;
-
-}
-
-
-
-

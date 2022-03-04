@@ -40,3 +40,12 @@ p, span
     font-size:25px;
     
   }
+
+  #score{
+    text-align: left;
+
+  }
+
+  #time{
+    text-align: right;
+  }
